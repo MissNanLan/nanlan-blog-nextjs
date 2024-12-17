@@ -1,14 +1,8 @@
-export interface ArchiveItem {
-  id: string;
-  title: string;
-  createdAt: string;
-  year: number;
-  month: number;
-}
+import { ArticleProps } from "./article";
 
 export interface ArchiveGroup {
   year: number;
   month: number;
-  articles: ArchiveItem[];
+  articles: ArticleProps[];
   count: number;
 }

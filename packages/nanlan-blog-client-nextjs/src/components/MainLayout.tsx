@@ -7,7 +7,7 @@ export default function MainLayout({
 }) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <div className="flex flex-col gap-8 md:flex-row">
+      <div className="flex flex-col gap-6 md:flex-row">
         <main className="w-full md:w-[70%]">{left}</main>
         <aside className="w-full md:w-[30%]">{right}</aside>
       </div>

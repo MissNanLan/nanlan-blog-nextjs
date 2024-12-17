@@ -34,7 +34,7 @@ export function TagCloud({ tags }: { tags: TagProps[] }) {
   };
 
   return (
-    <Card>
+    <Card className="w-[350px]">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Tag size={16} />

@@ -2,9 +2,26 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArticleProps } from "@/types/article";
 import { Calendar, ChartBarStacked, Tag } from "lucide-react";
+import { ArticleMetaItem, ArticleMetaItemProps } from "./ArticleMetaItem";
 
 export function ArticleCard(props: ArticleProps) {
-  const { title, description, createdAt, tags, category, id } = props;
+  const { title, description, createdAt, tag, category, id } = props;
+  const articleInfoCardList: ArticleMetaItemProps[] = [
+    {
+      title: "发表于",
+      icon: <Calendar size={14} />,
+      value: createdAt,
+    },
+    {
+      icon: <ChartBarStacked size={14} />,
+      value: category,
+    },
+    {
+      icon: <Tag size={14} />,
+      value: tag,
+      needDivide: false,
+    },
+  ];
 
   return (
     <Card>
@@ -15,21 +32,11 @@ export function ArticleCard(props: ArticleProps) {
           </Link>
         </CardTitle>
         <div className="text-gray-custom flex flex-wrap items-center gap-2 pt-2 text-xs">
-          <span className="flex items-center gap-1">
-            <Calendar size={14} />
-            <span className="pr-0.5">发表于</span>
-            {createdAt}
-          </span>
-          <span className="text-gray-custom ">|</span>
-          <span className="flex items-center gap-1">
-            <ChartBarStacked size={14} />
-            {category}
-          </span>
-          <span className="text-gray-custom">|</span>
-          <span className="flex items-center gap-1">
-            <Tag size={14} />
-            {tags.join(", ")}
-          </span>
+          {articleInfoCardList.map((item, index) => (
+            <div key={index}>
+              <ArticleMetaItem {...item} />
+            </div>
+          ))}
         </div>
       </CardHeader>
       <CardContent>{description}</CardContent>

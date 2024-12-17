@@ -4,7 +4,10 @@ export interface ArticleProps {
   description: string;
   content: string;
   createdAt: string;
-  tags: string[];
+  tag: string;
   category: string;
   images?: string;
+  count: number;
+  updatedAt: string;
+  readingTime: number;
 }

@@ -26,17 +26,17 @@ export default function Header() {
       {
         name: "标签",
         icon: Tags,
-        href: "/tags",
+        href: "/tag",
       },
       {
         name: "分类",
         icon: FolderTree,
-        href: "/categories",
+        href: "/category",
       },
       {
         name: "归档",
         icon: Archive,
-        href: "/archives",
+        href: "/archive",
       },
     ];
 
